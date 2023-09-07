@@ -2,21 +2,23 @@
 
 // listen to the key the user make//
 window.addEventListener("keydown", (e) => {
+    //give me the start time when the key is press//
+    let startTime = Date.now();
     let KeyPressed;
         //TEST//
         // console.log("you pressed a key");
         KeyPressed = e.key;
         KeyPressed = KeyPressed.toUpperCase();
         // console.log(KeyPressed);
-        verifyKey(KeyPressed); 
+        verifyKey(KeyPressed, startTime); 
 },
     );
 
-
 //check if the key is one of the kbd of 
-function verifyKey (KeyPressed) {
+function verifyKey (KeyPressed, startTime) {
         // keyPassed = divKey[i].getElementsByTagName("kbd");
-    const divKey = document.getElementsByClassName("key");
+        keyCount = 0;
+        const divKey = document.getElementsByClassName("key");
     for (let i = 0; i < divKey.length; i++)
         if ((divKey[i].children[0].outerText) === KeyPressed) {
             divKey[i].classList.add("playing");
@@ -27,17 +29,7 @@ function verifyKey (KeyPressed) {
             setTimeout(() => {
                 divKey[i].classList.remove("playing");
             }, 100);
-
-            window.addEventListener("keyup", (e) => {
-            keySound[i].stop();
-            }
-            )
-            
             return;
-            
-        }
-        else {
-            // console.log("Not a valid key");
         }
 };
 
@@ -49,5 +41,3 @@ function verifyKey (KeyPressed) {
    //-DONE-1.1 When key pressed (Ok and check if valid est ok aussi !)
         //1.1.1 Add yellow shinning border
         //1.1.2 play sound link with the button (see html)
-
-
