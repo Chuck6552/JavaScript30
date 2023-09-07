@@ -5,13 +5,10 @@ window.addEventListener("keydown", (e) => {
     let KeyPressed;
         //TEST//
         // console.log("you pressed a key");
-        // KeyPressed = e.key;
-        // KeyPressed = KeyPressed.toUpperCase();
+        KeyPressed = e.key;
+        KeyPressed = KeyPressed.toUpperCase();
         // console.log(KeyPressed);
-        verifyKey(KeyPressed);
-    //
-    div[i].classList.add("playing");
-
+        verifyKey(KeyPressed); 
 },
     );
 
@@ -19,16 +16,17 @@ window.addEventListener("keydown", (e) => {
 
 //check if the key is one of the kbd of 
 function verifyKey (KeyPressed) {
+        // keyPassed = divKey[i].getElementsByTagName("kbd");
     const divKey = document.getElementsByClassName("key");
-    // keyPassed = divKey[i].getElementsByTagName("kbd");
-
     for (let i = 0; i < divKey.length; i++)
         if ((divKey[i].children[0].outerText) === KeyPressed) {
             // console.log("Valid Key");
-            return divKey[i];
+            divKey[i].classList.add("playing");
+            return;
+            
         }
         else {
-            console.log("Not a valid key");
+            // console.log("Not a valid key");
         }
 };
 
