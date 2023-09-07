@@ -12,6 +12,7 @@ window.addEventListener("keydown", (e) => {
 },
     );
 
+
 //check if the key is one of the kbd of 
 function verifyKey (KeyPressed) {
         // keyPassed = divKey[i].getElementsByTagName("kbd");
@@ -19,9 +20,19 @@ function verifyKey (KeyPressed) {
     for (let i = 0; i < divKey.length; i++)
         if ((divKey[i].children[0].outerText) === KeyPressed) {
             divKey[i].classList.add("playing");
+            
+            //playing the good sound//
+            keySound = document.getElementsByTagName("audio");
+            keySound[i].play();
             setTimeout(() => {
                 divKey[i].classList.remove("playing");
             }, 100);
+
+            window.addEventListener("keyup", (e) => {
+            keySound[i].stop();
+            }
+            )
+            
             return;
             
         }
@@ -31,9 +42,6 @@ function verifyKey (KeyPressed) {
 };
 
 //Get parent attribute of the corresponding Kbd
-
-
-
 
 
 //NOTES//
