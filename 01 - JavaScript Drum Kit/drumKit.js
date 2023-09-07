@@ -3,15 +3,15 @@
 // listen to the key the user make//
 window.addEventListener("keydown", (e) => {
     let KeyPressed;
-    // console.log("you pressed a key");
-    // KeyPressed = e.key;
-    // KeyPressed = KeyPressed.toUpperCase();
-    // console.log(KeyPressed);
-    verifyKey(KeyPressed);
-    // let dataKey = KeyPressed[i].parentElement.getAttribute("data-key")
-    // console.log("Data key is" + dataKey);
-    // ADD function to check if key press is one of the kbd of div
-    
+        //TEST//
+        // console.log("you pressed a key");
+        // KeyPressed = e.key;
+        // KeyPressed = KeyPressed.toUpperCase();
+        // console.log(KeyPressed);
+        verifyKey(KeyPressed);
+    //
+    div[i].classList.add("playing");
+
 },
     );
 
