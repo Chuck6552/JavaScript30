@@ -12,12 +12,6 @@ window.addEventListener("keydown", (e) => {
 },
     );
 
-    // window.addEventListener("keyup"), (e) => {
-    
-
-
-
-
 //check if the key is one of the kbd of 
 function verifyKey (KeyPressed) {
         // keyPassed = divKey[i].getElementsByTagName("kbd");
