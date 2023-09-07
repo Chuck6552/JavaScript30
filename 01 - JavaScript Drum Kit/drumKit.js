@@ -25,6 +25,7 @@ function verifyKey (KeyPressed, startTime) {
             
             //playing the good sound//
             keySound = document.getElementsByTagName("audio");
+            keySound[i].currentTime = 0;
             keySound[i].play();
             setTimeout(() => {
                 divKey[i].classList.remove("playing");
