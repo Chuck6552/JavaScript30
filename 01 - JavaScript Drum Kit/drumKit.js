@@ -12,6 +12,10 @@ window.addEventListener("keydown", (e) => {
 },
     );
 
+    // window.addEventListener("keyup"), (e) => {
+    
+
+
 
 
 //check if the key is one of the kbd of 
@@ -20,8 +24,10 @@ function verifyKey (KeyPressed) {
     const divKey = document.getElementsByClassName("key");
     for (let i = 0; i < divKey.length; i++)
         if ((divKey[i].children[0].outerText) === KeyPressed) {
-            // console.log("Valid Key");
             divKey[i].classList.add("playing");
+            setTimeout(() => {
+                divKey[i].classList.remove("playing");
+            }, 100);
             return;
             
         }
