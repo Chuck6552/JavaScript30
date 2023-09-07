@@ -3,30 +3,37 @@
 // listen to the key the user make//
 window.addEventListener("keydown", (e) => {
     let KeyPressed;
-    console.log("you pressed a key");
-    KeyPressed = e.key;
-    KeyPressed = KeyPressed.toUpperCase();
-    console.log(KeyPressed);
+    // console.log("you pressed a key");
+    // KeyPressed = e.key;
+    // KeyPressed = KeyPressed.toUpperCase();
+    // console.log(KeyPressed);
     verifyKey(KeyPressed);
+    // let dataKey = KeyPressed[i].parentElement.getAttribute("data-key")
+    // console.log("Data key is" + dataKey);
     // ADD function to check if key press is one of the kbd of div
     
 },
     );
 
+
+
 //check if the key is one of the kbd of 
 function verifyKey (KeyPressed) {
-    const divKey = document.getElementsByClassName("keys");
-    let keyPassed = divKey[0].getElementsByTagName("kbd");
-    
-    for (let i = 0; i < keyPassed.length; i++)
-        if ((keyPassed[i].innerHTML) === KeyPressed) {
-            console.log("Valid Key");
-            return;
+    const divKey = document.getElementsByClassName("key");
+    // keyPassed = divKey[i].getElementsByTagName("kbd");
+
+    for (let i = 0; i < divKey.length; i++)
+        if ((divKey[i].children[0].outerText) === KeyPressed) {
+            // console.log("Valid Key");
+            return divKey[i];
         }
         else {
             console.log("Not a valid key");
         }
 };
+
+//Get parent attribute of the corresponding Kbd
+
 
 
 
